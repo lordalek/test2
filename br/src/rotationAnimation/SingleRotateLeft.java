@@ -12,16 +12,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import deleteAnimation.AbstractDrawingPanel;
-import deleteAnimation.RemoveMin;
-
 
 public class SingleRotateLeft extends JApplet {
 	public static void main(String s[]) {
 		JFrame frame = new JFrame();
 		frame.setTitle("Insert");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		JApplet applet = new RemoveMin();
+		JApplet applet = new SingleRotateLeft();
 		applet.init();
 		frame.getContentPane().add(applet);
 		frame.pack();
@@ -88,6 +85,8 @@ public class SingleRotateLeft extends JApplet {
 			Graphics2D g2 = (Graphics2D) g;
 			g2.clearRect(0, 0, getWidth(), getHeight());
 			if(iteration == 0){
+				node1 = new GrahpicalNode("1", 170, 310);
+				paintNode(node1, g2);
 			}
 		}
 
