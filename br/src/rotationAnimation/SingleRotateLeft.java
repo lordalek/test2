@@ -1,6 +1,7 @@
 package rotationAnimation;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -31,8 +32,10 @@ public class SingleRotateLeft extends JApplet {
 
 	private class DrawingPanel extends AbstractDrawingPanel{
 		private Thread thread;
+		Color red = Color.RED, green = Color.GREEN, blue = Color.BLUE;
+		
 		private JButton button, stopButton, playButton;
-		private GrahpicalNode node1, node2, node4, node6, node10, node12, node14, node16;
+		private GrahpicalNode node1, node2, node4, node6, node8, node10, node12, node14, node16;
 		private int iteration, maxIteration = 7, y = 0, j = 0;
 		public DrawingPanel(){
 			this.setLayout(new BorderLayout());
@@ -87,6 +90,74 @@ public class SingleRotateLeft extends JApplet {
 			if(iteration == 0){
 				node1 = new GrahpicalNode("1", 170, 310);
 				paintNode(node1, g2);
+				node2 = new GrahpicalNode("2", 240, 240);
+				paintNode(node2, g2);
+				node4 = new GrahpicalNode("4", 310, 170);
+				paintNodeWithColor(node4, g2, blue);
+				node6 = new GrahpicalNode("6", 355, 240);
+				paintNode(node6, g2);
+				node8 = new GrahpicalNode("8", 380, 100);
+				paintNodeWithColor(node8, g2, red);
+				node10 = new GrahpicalNode("10", 425, 170);
+				paintNode(node10, g2);
+				node12 = new GrahpicalNode("12", 450, 30);
+				paintNode(node12, g2);
+				paintLine(node2, node1, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node4, node6, g2);
+				paintLine(node8, node4, g2);
+				paintLine(node8, node10, g2);
+				paintLine(node12, node8, g2);
+			}
+			if(iteration == 1){
+				paintNode(node1, g2);
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node2, node1, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node8, node10, g2);
+				paintLine(node12, node8, g2);
+				paintLine(node8, node4, g2);
+				if(y < 20)y++; 
+				if(j < 45)j+=2;
+				removeLine(node4, node6, g2, j, y);
+				if(y >= 20 && j >= 45){iteration++; y = j = 0;}
+			}
+			
+			if(iteration == 2){
+				paintNode(node1, g2);
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node2, node1, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node8, node10, g2);
+				paintLine(node12, node8, g2);
+				if(j < 70) j+=3;
+				if(y < 20) y++;
+				removeLine(node8, node4, g2, -j, y);
+				if(j >= 70 && y >= 20){iteration++; j = y = 0;}
+			}
+			if(iteration == 3){
+				paintNode(node1, g2);
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node2, node1, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node8, node10, g2);
+				paintLine(node12, node8, g2);
+				
 			}
 		}
 
