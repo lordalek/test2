@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.QuadCurve2D;
 
 import javax.swing.JApplet;
 import javax.swing.JButton;
@@ -44,8 +45,8 @@ public class SingleRotateLeft extends JApplet {
 
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					if(iteration <maxIteration) iteration++;
-					else if(iteration >= maxIteration) iteration = 0;
+					if(iteration <maxIteration){iteration++; j = y = 0;}
+					else if(iteration >= maxIteration) {iteration = j = y = 0;}
 					start(); 
 					System.out.println(iteration);
 					repaint();
@@ -157,7 +158,45 @@ public class SingleRotateLeft extends JApplet {
 				paintLine(node4, node2, g2);
 				paintLine(node8, node10, g2);
 				paintLine(node12, node8, g2);
-				
+				if(j < (node8.getBottomPoint().getX() - node6.getTopPoint().getX())) j++;
+				if(y < (node6.getTopPoint().getY() - node8.getBottomPoint().getY())) y+=3;
+				paintNewLine(-j, y, node8, g2);	
+				if(j >= (node8.getBottomPoint().getX() - node6.getTopPoint().getX()) && y >= (node6.getTopPoint().getY() - node8.getBottomPoint().getY())){iteration++; j = y = 0;}
+			}
+			
+			if(iteration == 4){
+				paintNode(node1, g2);
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node2, node1, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node8, node10, g2);
+				paintLine(node8, node6, g2);
+				if(j < (node12.getBottomPoint().getX() - node8.getTopPoint().getX())) j+=3;
+				if(y < (node8.getTopPoint().getY() - node12.getBottomPoint().getY())) y++;
+				removeLine(node12, node8, g2, -j, y);
+				if(j >= (node12.getBottomPoint().getX() - node8.getTopPoint().getX()) && y >= (node8.getTopPoint().getY() - node12.getBottomPoint().getY())){iteration++; j = y = 0;}
+			}
+			
+			if(iteration == 5){
+				paintNode(node1, g2);
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node2, node1, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node8, node10, g2);
+				paintLine(node8, node6, g2);
+				if(j < (node12.getBottomPoint().getX() - node4.getTopPoint().getX())) j+=3;
+				if(y < (node4.getTopPoint().getY() - node12.getBottomPoint().getY())) y+=2;
+				g2.draw(new QuadCurve2D.Double(node12.getBottomPoint().getX(), node12.getBottomPoint().getY(), node12.getBottomPoint().getX() - 2*j, node12.getBottomPoint().getY()-50, node12.getBottomPoint().getX() - j, node12.getBottomPoint().getY()+y));
 			}
 		}
 

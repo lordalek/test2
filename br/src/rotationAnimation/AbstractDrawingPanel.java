@@ -14,7 +14,9 @@ public class AbstractDrawingPanel extends JPanel implements Runnable{
 		g2.drawLine((int)bottomNode.getTopPoint().getX()-x, (int)bottomNode.getTopPoint().getY()-y, (int) topNode.getBottomPoint().getX(), (int) topNode.getBottomPoint().getY());
 	}
 	
-	public void 
+	public void paintNewLine(int x, int y, GrahpicalNode startNode, Graphics2D g2){
+		g2.drawLine( (int) startNode.getBottomPoint().getX(), (int) startNode.getBottomPoint().getY(), (int) startNode.getBottomPoint().getX() + x, (int) startNode.getBottomPoint().getY() + y);
+	}
 
 	public void paintNode(GrahpicalNode BNC, Graphics2D g2){
 		g2.draw(BNC.getShape());
