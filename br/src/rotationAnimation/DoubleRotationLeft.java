@@ -246,12 +246,46 @@ public class DoubleRotationLeft extends JApplet {
 				paintLine(node6, node4, g2);
 				paintLine(node8, node10, g2);
 				paintLine(node12, node8, g2);
-				if(j < node8.getBottomPoint().getX() - node4.getTopPoint().getX()) j+=2;
-				if(y < node4.getTopPoint().getY() - node8.getBottomPoint().getY()) y+=2;
+				if(j < node8.getBottomPoint().getX() - node4.getTopPoint().getX()) j+=3;
+				if(y < node4.getTopPoint().getY() - node8.getBottomPoint().getY()) y+=3;
 				removeLine(node8, node4, g2, -j, y);
 				if(j >= node8.getBottomPoint().getX() - node4.getTopPoint().getX() && y >= node4.getTopPoint().getY() - node8.getBottomPoint().getY()) {iteration++; y = j = 0;}
 			}
 			
+			if(iteration == 8){
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNodeWithColor(node5, g2, green);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node4, node5, g2);
+				paintLine(node6, node4, g2);
+				paintLine(node8, node10, g2);
+				paintLine(node12, node8, g2);
+				if(j < node8.getBottomPoint().getX() - node6.getTopPoint().getX()) j+=3;
+				if(y < node6.getTopPoint().getY() - node8.getBottomPoint().getY()) y++;
+				paintNewLine(-j, y, node8, g2);
+				if(j >= node8.getBottomPoint().getX() - node6.getTopPoint().getX() && y >= node6.getTopPoint().getY() - node8.getBottomPoint().getY()) {iteration++; y = j = 0;}
+			}
+			
+			if(iteration == 8){
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNodeWithColor(node5, g2, green);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node4, node5, g2);
+				paintLine(node6, node4, g2);
+				paintLine(node8, node10, g2);
+				paintLine(node12, node8, g2);
+				paintLine(node8, node6, g2);
+			}
 			
 
 		}
