@@ -1,4 +1,4 @@
-package insertAnimation;
+package animations;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -33,7 +33,7 @@ public class InsertSingleNode extends JApplet {
 		private Thread thread;
 		private JButton button, stopButton, playButton;
 		private int iteration, maxIteration = 5, i = 0, y = 0, j = 0, y2 = 0, k = 0;
-		private GraphicalNode node15, node10, nullNodeLeft, nullNodeRight, tierTwoNullNodeRight, tierTwoNullNodeLeft, returnNodeOfNode10;		
+		private GrahpicalNode node15, node10, nullNodeLeft, nullNodeRight, tierTwoNullNodeRight, tierTwoNullNodeLeft, returnNodeOfNode10;		
 		public DrawingPanel(){
 			this.setLayout(new BorderLayout());
 			button = new JButton("Next");
@@ -87,9 +87,9 @@ public class InsertSingleNode extends JApplet {
 			if(iteration == 0){
 				k++;
 				if(k >=10) iteration++; j = i = y = y2 = 0;
-				node15 = new GraphicalNode("15", 140, 30);
-				nullNodeLeft = new GraphicalNode("null", 70, 100);
-				nullNodeRight = new GraphicalNode("null", 210, 100);
+				node15 = new GrahpicalNode("15", 140, 30);
+				nullNodeLeft = new GrahpicalNode("null", 70, 100);
+				nullNodeRight = new GrahpicalNode("null", 210, 100);
 				paintNode(node15, g2);				
 				paintNode(nullNodeLeft, g2);				
 				paintNode(nullNodeRight, g2);				
@@ -99,7 +99,7 @@ public class InsertSingleNode extends JApplet {
 			if(iteration == 1){
 				if(i <= 129) i+=2;
 				if(i == 130) iteration ++;
-				node10 = new GraphicalNode("10", 10+i, 30);
+				node10 = new GrahpicalNode("10", 10+i, 30);
 				paintNode(node10, g2);				
 				paintNode(node15, g2);				
 				g2.drawString("public void insert(Comparable 10) { root = insert(10, 15 )} ", 10, 20);
@@ -121,7 +121,7 @@ public class InsertSingleNode extends JApplet {
 				if(y <= 69) y++;
 				if(y >= 69 && j >= 69) iteration++;
 				g2.drawString("15.compareTo(10) < 0, passes the node to the left" , 10, 20);
-				node10 = new  GraphicalNode("10", 140-j, 30+y);
+				node10 = new  GrahpicalNode("10", 140-j, 30+y);
 				paintNode(node15, g2);
 				
 				//Pointer
@@ -141,15 +141,15 @@ public class InsertSingleNode extends JApplet {
 				g2.drawString("and generates its" , 10, 40);
 				g2.drawString("own subtree." , 10, 60);
 				paintNode(node15, g2);				
-				node10 = new  GraphicalNode("10", 70, 100);
+				node10 = new  GrahpicalNode("10", 70, 100);
 				paintNode(node10, g2);				
 				paintNode(nullNodeRight, g2);				
 				paintLine(node15, nullNodeRight, g2);
 				if(i <= 69) i++;
 				if(y2 <= 69) y2++;
 				if(y2 >= 69 && i >= 69) iteration++; y = 0; j = 0;
-				tierTwoNullNodeRight = new GraphicalNode("null", 70+i, 100+y2);
-				tierTwoNullNodeLeft = new GraphicalNode("null", 70-i, 100+y2);
+				tierTwoNullNodeRight = new GrahpicalNode("null", 70+i, 100+y2);
+				tierTwoNullNodeLeft = new GrahpicalNode("null", 70-i, 100+y2);
 				paintNode(tierTwoNullNodeRight, g2);				
 				paintLine(node10, tierTwoNullNodeRight, g2);
 				paintNode(tierTwoNullNodeLeft, g2);				
@@ -157,8 +157,8 @@ public class InsertSingleNode extends JApplet {
 			}
 
 			if(iteration == 4){
-				tierTwoNullNodeRight = new GraphicalNode("null", 140, 170);
-				tierTwoNullNodeLeft = new GraphicalNode("null", 0, 170);
+				tierTwoNullNodeRight = new GrahpicalNode("null", 140, 170);
+				tierTwoNullNodeLeft = new GrahpicalNode("null", 0, 170);
 				paintNode(tierTwoNullNodeRight, g2);				
 				paintLine(node10, tierTwoNullNodeRight, g2);
 				paintNode(tierTwoNullNodeLeft, g2);				
@@ -176,7 +176,7 @@ public class InsertSingleNode extends JApplet {
 				if(j <= 69) j++;
 				if(y <= 69) y++;
 				if(y >= 70 && j >= 70) iteration++; i = 0; y2 = 0;
-				returnNodeOfNode10 = new GraphicalNode("10", 70+j, (int) (100-y));
+				returnNodeOfNode10 = new GrahpicalNode("10", 70+j, (int) (100-y));
 				paintNode(returnNodeOfNode10, g2);				
 				g2.setColor(Color.BLACK);
 			}

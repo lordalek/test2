@@ -1,9 +1,10 @@
-package rotationAnimation;
+package animations;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
+
 
 public class AbstractDrawingPanel extends JPanel implements Runnable{
 	public void paintLine(GrahpicalNode topNode, GrahpicalNode bottomNode, Graphics2D g2) {

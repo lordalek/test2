@@ -1,4 +1,4 @@
-package br;
+package animations;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -14,6 +14,8 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
 import javax.swing.JPanel;
+
+import br.GraphicNode;
 
 
 

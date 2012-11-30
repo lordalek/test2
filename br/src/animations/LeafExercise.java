@@ -1,4 +1,4 @@
-package br;
+package animations;
 
 import javax.swing.JApplet;
 import javax.swing.JFrame;

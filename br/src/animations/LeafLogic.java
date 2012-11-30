@@ -1,6 +1,8 @@
-package br;
+package animations;
 
 import java.awt.Color;
+
+import br.GraphicNode;
 
 
 public class LeafLogic {

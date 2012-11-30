@@ -1,4 +1,4 @@
-package insertAnimation;
+package animations;
 
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
@@ -7,12 +7,21 @@ import java.awt.geom.Point2D;
 //Note that this class is not accessible outside
 //of this package.
 
-class GraphicalNode {
+class GrahpicalNode {
+	
+	// Friendly data; accessible by other package routines
+	Comparable element; // The data in the node
+	GrahpicalNode left; // Left child
+	GrahpicalNode right; // Right child
 	private Point2D bottomPoint, topPoint, valuePosition;
 	private Ellipse2D shape;
 	private int sizeOfNode = 50;
+	
+	
 	// Constructors
-	public GraphicalNode(Comparable theElement, int posX, int posY) {
+	
+	public GrahpicalNode(Comparable theElement, int posX, int posY) {
+		
 		element = theElement;
 		left = right = null;
 		bottomPoint = new Point2D.Double(posX+25, posY+50);
@@ -41,8 +50,5 @@ class GraphicalNode {
 		return topPoint;
 	}
 
-	// Friendly data; accessible by other package routines
-	Comparable element; // The data in the node
-	GraphicalNode left; // Left child
-	GraphicalNode right; // Right child
+	
 }
