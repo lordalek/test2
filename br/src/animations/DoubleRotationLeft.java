@@ -272,7 +272,7 @@ public class DoubleRotationLeft extends JApplet {
 				if(j >= node8.getBottomPoint().getX() - node6.getTopPoint().getX() && y >= node6.getTopPoint().getY() - node8.getBottomPoint().getY()) {iteration++; y = j = 0;}
 			}
 			
-			if(iteration == 8){
+			if(iteration == 9){
 				paintNode(node2, g2);
 				paintNodeWithColor(node4, g2, blue);
 				paintNodeWithColor(node5, g2, green);

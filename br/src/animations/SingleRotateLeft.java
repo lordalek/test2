@@ -111,7 +111,7 @@ public class SingleRotateLeft extends JApplet {
 				paintLine(node8, node10, g2);
 				paintLine(node12, node8, g2);
 				j++;
-				if(j >= 30) {iteration++; y = j = 0;}
+				if(j >= 20) {iteration++; y = j = 0;}
 			}
 			if(iteration == 1){
 				paintNode(node1, g2);
@@ -267,6 +267,7 @@ public class SingleRotateLeft extends JApplet {
 				}
 			
 			if(iteration == 9) {
+				j++;
 				node4 = new GrahpicalNode("4", 355, 100);
 				paintNode(node1, g2);
 				paintNode(node2, g2);
@@ -280,11 +281,9 @@ public class SingleRotateLeft extends JApplet {
 				paintLine(node8, node10, g2);
 				paintLine(node8, node6, g2);
 				g2.draw(new QuadCurve2D.Double(node12.getBottomPoint().getX(), node12.getBottomPoint().getY(), node12.getBottomPoint().getX()-10, node12.getBottomPoint().getY()-5, node4.getTopPoint().getX(),  node4.getTopPoint().getY()));
-				if(j < (node8.getTopPoint().getX() - node4.getBottomPoint().getX())) j+=2;
-				if(y < (node8.getTopPoint().getY() - node4.getBottomPoint().getY())) y++;
-				paintNewLine(j, y, node4, g2);
-				if((j >= (node8.getTopPoint().getX() - node4.getBottomPoint().getX())) && (y >= (node8.getTopPoint().getY() - node4.getBottomPoint().getY()))){iteration = j = y = 0;}
-				}
+				paintLine(node4, node8, g2);
+				if(j >= 20){iteration = j = y = 0;}
+			}
 		}
 
 		public void stop() {
