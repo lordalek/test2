@@ -38,7 +38,7 @@ public class DoubleRotationLeft extends JApplet {
 
 		private JButton button, stopButton, playButton;
 		private GrahpicalNode node1, node2, node4, node5, node6, node8, node10, node12;
-		private int iteration, maxIteration = 9, y = 0, j = 0;
+		private int iteration, maxIteration = 16, y = 0, j = 0;
 		public DrawingPanel(){
 			this.setLayout(new BorderLayout());
 			button = new JButton("Next");
@@ -286,9 +286,145 @@ public class DoubleRotationLeft extends JApplet {
 				paintLine(node8, node10, g2);
 				paintLine(node12, node8, g2);
 				paintLine(node8, node6, g2);
+				j++;
+				if(j >= 15){iteration++; y = j = 0;}
 			}
 			
+			if(iteration == 10){
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNodeWithColor(node5, g2, green);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node4, node5, g2);
+				paintLine(node6, node4, g2);
+				paintLine(node8, node10, g2);
+				paintLine(node8, node6, g2);
+				if(j < node12.getBottomPoint().getX() - node8.getTopPoint().getX()) j+=3;
+				if(y < node8.getTopPoint().getY() - node12.getBottomPoint().getY()) y++;
+				removeLine(node12, node8, g2, -j, y);
+				if(j >= node12.getBottomPoint().getX() - node8.getTopPoint().getX() && y >= node8.getTopPoint().getY() - node12.getBottomPoint().getY() ){iteration++; y = j = 0;}
+			}
+			
+			if(iteration == 11){
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNodeWithColor(node5, g2, green);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node4, node5, g2);
+				paintLine(node6, node4, g2);
+				paintLine(node8, node10, g2);
+				if(j < node8.getBottomPoint().getX() - node6.getTopPoint().getX()) j+=3;
+				if(y < node6.getTopPoint().getY() - node8.getBottomPoint().getY()) y++;
+				removeLine(node8, node6, g2, -j, y);
+				if(j >= node8.getBottomPoint().getX() - node6.getTopPoint().getX() && y >= node6.getTopPoint().getY() - node8.getBottomPoint().getY() ){iteration++; y = j = 0;}
+			}
 
+			if(iteration == 12){
+				if(y <= 69) y+=3;
+				node8 = new GrahpicalNode("8", 380, 100+y);
+				node10 = new GrahpicalNode("10", 425, 170+y);
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNodeWithColor(node5, g2, green);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node4, node5, g2);
+				paintLine(node6, node4, g2);
+				paintLine(node8, node10, g2);
+				if(y >= 70) {iteration++; y = j = 0;}
+			}
+			
+			if(iteration == 13){
+				node8 = new GrahpicalNode("8", 380, 170);
+				node10 = new GrahpicalNode("10", 425, 240);
+				if(y <= 69)y+=3;
+				node4 = new GrahpicalNode("4", 275, 240-y);
+				node2 = new GrahpicalNode("2", 205, 310-y);
+				node5 = new GrahpicalNode("5", 325, 310-y);
+				node6 = new GrahpicalNode("6", 320, 170-y);
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNodeWithColor(node5, g2, green);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node4, node5, g2);
+				paintLine(node6, node4, g2);
+				paintLine(node8, node10, g2);
+				if(y >=70){iteration++; y = j = 0;}
+			}
+			
+			if(iteration == 14){
+				node4 = new GrahpicalNode("4", 275, 170);
+				node2 = new GrahpicalNode("2", 205, 240);
+				node5 = new GrahpicalNode("5", 325, 240);
+				node6 = new GrahpicalNode("6", 320, 100);
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNodeWithColor(node5, g2, green);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node4, node5, g2);
+				paintLine(node6, node4, g2);
+				paintLine(node8, node10, g2);
+				if(j < node8.getBottomPoint().getX() - node6.getTopPoint().getX()) j+=3;
+				if(y < node8.getTopPoint().getY() - node6.getBottomPoint().getY()) y++;
+				paintNewLine(j, y, node6, g2);
+				if(j >= node8.getBottomPoint().getX() - node6.getTopPoint().getX() && y >= node8.getTopPoint().getY() - node6.getBottomPoint().getY()){iteration++; y = j = 0;}
+			}
+			
+			if(iteration == 15){
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNodeWithColor(node5, g2, green);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node4, node5, g2);
+				paintLine(node6, node4, g2);
+				paintLine(node8, node10, g2);
+				paintLine(node6, node8, g2);
+				if(j < node12.getBottomPoint().getX() - node6.getTopPoint().getX()) j+=4;
+				if(y < node6.getTopPoint().getY() - node12.getBottomPoint().getY()) y++;
+				paintNewLine(-j, y, node12, g2);
+				if(j >= node12.getBottomPoint().getX() - node6.getTopPoint().getX() && y >= node6.getTopPoint().getY() - node12.getBottomPoint().getY()){iteration++; y = j = 0;}
+			}
+			
+			if(iteration == 16){
+				paintNode(node2, g2);
+				paintNodeWithColor(node4, g2, blue);
+				paintNodeWithColor(node5, g2, green);
+				paintNode(node6, g2);
+				paintNodeWithColor(node8, g2, red);
+				paintNode(node10, g2);
+				paintNode(node12, g2);
+				paintLine(node4, node2, g2);
+				paintLine(node4, node5, g2);
+				paintLine(node6, node4, g2);
+				paintLine(node8, node10, g2);
+				paintLine(node6, node8, g2);
+				paintLine(node12, node6, g2);
+				j++;
+				if(j >= 20) {iteration = y = j = 0;}
+			}
 		}
 
 		public void stop() {
