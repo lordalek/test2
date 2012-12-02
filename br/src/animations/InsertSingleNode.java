@@ -104,9 +104,12 @@ public class InsertSingleNode extends JApplet {
 				paintNode(node15, g2);				
 				g2.drawString("public void insert(Comparable 10) { root = insert(10, 15 )} ", 10, 20);
 				//Pointer
-				g2.drawLine((int) node15.getValuePosition().getX()-30, (int) node15.getValuePosition().getY(), (int) node10.getValuePosition().getX()+30, (int) node10.getValuePosition().getY());
-				g2.drawLine((int) node15.getValuePosition().getX()-30, (int) node15.getValuePosition().getY(),(int) node15.getValuePosition().getX()-45, (int) node15.getValuePosition().getY()+15);
-				g2.drawLine((int) node15.getValuePosition().getX()-30, (int) node15.getValuePosition().getY(), (int)node15.getValuePosition().getX()-45, (int) node15.getValuePosition().getY()-15);
+				g2.drawLine((int) node15.getValuePosition().getX()-30, (int) node15.getValuePosition().getY(),
+						(int) node10.getValuePosition().getX()+30, (int) node10.getValuePosition().getY());
+				g2.drawLine((int) node15.getValuePosition().getX()-30, (int) node15.getValuePosition().getY(),
+						(int) node15.getValuePosition().getX()-45, (int) node15.getValuePosition().getY()+15);
+				g2.drawLine((int) node15.getValuePosition().getX()-30, (int) node15.getValuePosition().getY(),
+						(int)node15.getValuePosition().getX()-45, (int) node15.getValuePosition().getY()-15);
 				
 				paintNode(nullNodeLeft, g2);				
 				paintNode(nullNodeRight, g2);				
@@ -125,9 +128,12 @@ public class InsertSingleNode extends JApplet {
 				paintNode(node15, g2);
 				
 				//Pointer
-				g2.drawLine((int) nullNodeLeft.getTopPoint().getX(), (int) nullNodeLeft.getTopPoint().getY(), (int) node15.getValuePosition().getX(), (int) node15.getValuePosition().getY());
-				g2.drawLine((int) nullNodeLeft.getTopPoint().getX(), (int) nullNodeLeft.getTopPoint().getY(),(int) nullNodeLeft.getTopPoint().getX(), (int) nullNodeLeft.getTopPoint().getY()-15);
-				g2.drawLine((int) nullNodeLeft.getTopPoint().getX(), (int) nullNodeLeft.getTopPoint().getY(), (int) nullNodeLeft.getTopPoint().getX()+15, (int) nullNodeLeft.getTopPoint().getY()+5);
+				g2.drawLine((int) nullNodeLeft.getTopPoint().getX(), (int) nullNodeLeft.getTopPoint().getY(),
+						(int) node15.getValuePosition().getX(), (int) node15.getValuePosition().getY());
+				g2.drawLine((int) nullNodeLeft.getTopPoint().getX(), (int) nullNodeLeft.getTopPoint().getY(),
+						(int) nullNodeLeft.getTopPoint().getX(), (int) nullNodeLeft.getTopPoint().getY()-15);
+				g2.drawLine((int) nullNodeLeft.getTopPoint().getX(), (int) nullNodeLeft.getTopPoint().getY(),
+						(int) nullNodeLeft.getTopPoint().getX()+15, (int) nullNodeLeft.getTopPoint().getY()+5);
 				
 				paintNode(node10, g2);				
 				paintNode(nullNodeLeft, g2);				
@@ -194,7 +200,8 @@ public class InsertSingleNode extends JApplet {
 				g2.setColor(Color.RED);
 				if(i <= 69) i+=2;
 				if(y2 <= 20) y2++;
-				g2.drawLine((int) node15.getBottomPoint().getX(), (int) node15.getBottomPoint().getY(), (int) node15.getBottomPoint().getX()-i, (int) node15.getBottomPoint().getY()+y2);
+				g2.drawLine((int) node15.getBottomPoint().getX(), (int) node15.getBottomPoint().getY(),
+						(int) node15.getBottomPoint().getX()-i, (int) node15.getBottomPoint().getY()+y2);
 				g2.setColor(Color.BLACK);
 				if(i >= 70 && y2 >= 20) iteration = 0;
 			}

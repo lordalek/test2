@@ -46,15 +46,23 @@ public class MarkLeavesAndRoot extends JApplet{
 			g2.setColor(listOfnodes[i].getColor());
 			g2.fill(listOfnodes[i].getShape());
 			g2.setColor(Color.BLACK);
-			g2.drawString(listOfnodes[i].getStringForShape(), (int) listOfnodes[i].getPositionOfValue().getX(), (int) listOfnodes[i].getPositionOfValue().getY());
+			g2.drawString(listOfnodes[i].getStringForShape(),
+					(int) listOfnodes[i].getPositionOfValue().getX(), (int) listOfnodes[i].getPositionOfValue().getY());
 			}
-			g2.drawLine((int)listOfnodes[0].getBottomPoint().getX(), (int)listOfnodes[0].getBottomPoint().getY(),(int) listOfnodes[1].getTopPoint().getX(),(int) listOfnodes[1].getTopPoint().getY());
-			g2.drawLine((int)listOfnodes[1].getBottomPoint().getX(), (int)listOfnodes[1].getBottomPoint().getY(),(int) listOfnodes[2].getTopPoint().getX(),(int) listOfnodes[2].getTopPoint().getY());
-			g2.drawLine((int)listOfnodes[1].getBottomPoint().getX(), (int)listOfnodes[1].getBottomPoint().getY(),(int) listOfnodes[3].getTopPoint().getX(),(int) listOfnodes[3].getTopPoint().getY());
-			g2.drawLine((int)listOfnodes[0].getBottomPoint().getX(), (int)listOfnodes[0].getBottomPoint().getY(),(int) listOfnodes[4].getTopPoint().getX(),(int) listOfnodes[4].getTopPoint().getY());
-			g2.drawLine((int)listOfnodes[4].getBottomPoint().getX(), (int)listOfnodes[4].getBottomPoint().getY(),(int) listOfnodes[5].getTopPoint().getX(),(int) listOfnodes[5].getTopPoint().getY());
-			g2.drawLine((int)listOfnodes[4].getBottomPoint().getX(), (int)listOfnodes[4].getBottomPoint().getY(),(int) listOfnodes[7].getTopPoint().getX(),(int) listOfnodes[7].getTopPoint().getY());
-			g2.drawLine((int)listOfnodes[5].getBottomPoint().getX(), (int)listOfnodes[5].getBottomPoint().getY(),(int) listOfnodes[6].getTopPoint().getX(),(int) listOfnodes[6].getTopPoint().getY());
+			g2.drawLine((int)listOfnodes[0].getBottomPoint().getX(), (int)listOfnodes[0].getBottomPoint().getY(),
+					(int) listOfnodes[1].getTopPoint().getX(),(int) listOfnodes[1].getTopPoint().getY());
+			g2.drawLine((int)listOfnodes[1].getBottomPoint().getX(), (int)listOfnodes[1].getBottomPoint().getY(),
+					(int) listOfnodes[2].getTopPoint().getX(),(int) listOfnodes[2].getTopPoint().getY());
+			g2.drawLine((int)listOfnodes[1].getBottomPoint().getX(), (int)listOfnodes[1].getBottomPoint().getY(),
+					(int) listOfnodes[3].getTopPoint().getX(),(int) listOfnodes[3].getTopPoint().getY());
+			g2.drawLine((int)listOfnodes[0].getBottomPoint().getX(), (int)listOfnodes[0].getBottomPoint().getY(),
+					(int) listOfnodes[4].getTopPoint().getX(),(int) listOfnodes[4].getTopPoint().getY());
+			g2.drawLine((int)listOfnodes[4].getBottomPoint().getX(), (int)listOfnodes[4].getBottomPoint().getY(),
+					(int) listOfnodes[5].getTopPoint().getX(),(int) listOfnodes[5].getTopPoint().getY());
+			g2.drawLine((int)listOfnodes[4].getBottomPoint().getX(), (int)listOfnodes[4].getBottomPoint().getY(),
+					(int) listOfnodes[7].getTopPoint().getX(),(int) listOfnodes[7].getTopPoint().getY());
+			g2.drawLine((int)listOfnodes[5].getBottomPoint().getX(), (int)listOfnodes[5].getBottomPoint().getY(),
+					(int) listOfnodes[6].getTopPoint().getX(),(int) listOfnodes[6].getTopPoint().getY());
 			
 			
 			
