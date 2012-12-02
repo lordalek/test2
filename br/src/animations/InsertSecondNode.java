@@ -203,9 +203,12 @@ public class InsertSecondNode extends JApplet {
 				paintNode(node13, g2);
 
 				//Pointer
-				g2.drawLine((int) node15.getValuePosition().getX()+30, (int) node15.getValuePosition().getY(), (int) node13.getValuePosition().getX()-10, (int) node13.getValuePosition().getY());
-				g2.drawLine((int) node15.getValuePosition().getX()+30, (int) node15.getValuePosition().getY(),(int) node15.getValuePosition().getX()+45, (int) node15.getValuePosition().getY()-15);
-				g2.drawLine((int) node15.getValuePosition().getX()+30, (int) node15.getValuePosition().getY(), (int)node15.getValuePosition().getX()+45, (int) node15.getValuePosition().getY()+15);
+				g2.drawLine((int) node15.getValuePosition().getX()+30, (int) node15.getValuePosition().getY(),
+						(int) node13.getValuePosition().getX()-10, (int) node13.getValuePosition().getY());
+				g2.drawLine((int) node15.getValuePosition().getX()+30, (int) node15.getValuePosition().getY(),
+						(int) node15.getValuePosition().getX()+45, (int) node15.getValuePosition().getY()-15);
+				g2.drawLine((int) node15.getValuePosition().getX()+30, (int) node15.getValuePosition().getY(),
+						(int)node15.getValuePosition().getX()+45, (int) node15.getValuePosition().getY()+15);
 
 				paintNode(node15, g2);
 				paintNode(tierTwoNullNodeRight, g2);				
@@ -316,7 +319,8 @@ public class InsertSecondNode extends JApplet {
 				if(i >= 70 && y >= 20 && y3>=69) iteration++; j = 0; y2 = 0;
 				returnNode = new GrahpicalNode("10", 70+i, (int) (100-y3));
 				paintNode(returnNode, g2);
-				g2.drawLine((int) node10.getBottomPoint().getX(), (int) node10.getBottomPoint().getY(), (int) node10.getBottomPoint().getX()+i, (int) node10.getBottomPoint().getY()+y);
+				g2.drawLine((int) node10.getBottomPoint().getX(), (int) node10.getBottomPoint().getY(),
+						(int) node10.getBottomPoint().getX()+i, (int) node10.getBottomPoint().getY()+y);
 				g2.setColor(Color.BLACK);
 			}
 
@@ -335,7 +339,8 @@ public class InsertSecondNode extends JApplet {
 				g2.setColor(Color.RED);
 				if(j <= 69) j+=2;
 				if(y2 <= 20) y2+=2;
-				g2.drawLine((int) node15.getBottomPoint().getX(), (int) node15.getBottomPoint().getY(), (int) node15.getBottomPoint().getX()-j, (int) node15.getBottomPoint().getY()+y2);
+				g2.drawLine((int) node15.getBottomPoint().getX(), (int) node15.getBottomPoint().getY(),
+						(int) node15.getBottomPoint().getX()-j, (int) node15.getBottomPoint().getY()+y2);
 				paintLine(node10, node13, g2);
 				g2.setColor(Color.BLACK);
 				if(j >= 70 && y2 >= 20) iteration = 0;
