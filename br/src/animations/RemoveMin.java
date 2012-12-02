@@ -141,7 +141,6 @@ public class RemoveMin extends JApplet {
 				symbol = new FindMinSymbol(150, 30, "root");
 				paintSymbol(symbol, g2);
 				g2.setColor(Color.YELLOW);
-
 				if(j <= 84)j+=5; 
 				if(y <= 69)y+=4;
 				g2.fill(new Rectangle2D.Double(node15.getBottomPoint().getX()-15-j, node15.getBottomPoint().getY()+0.285*y, 30, 30));
@@ -166,7 +165,6 @@ public class RemoveMin extends JApplet {
 				g2.setColor(Color.GREEN);
 				if(y2 <= 69)y2+=4;
 				if(i <= 84)i+=5; 
-
 				g2.fill(new Rectangle2D.Double(node10.getTopPoint().getX()-15+i, node10.getTopPoint().getY()-0.285*y2, 30, 30));
 				g2.setColor(Color.BLACK);
 				if(i >= 85 && y2  >=70) iteration++; j = 0; y = 0;
@@ -274,7 +272,6 @@ public class RemoveMin extends JApplet {
 				g2.fill(new Rectangle2D.Double(node5.getBottomPoint().getX()-15, node5.getBottomPoint().getY()+y, 30, 30));
 				g2.setColor(Color.BLACK);
 				paintSymbol(symbol, g2);
-				System.out.println("x: " + (node5.getBottomPoint().getX()-15-j) +" Y: " +( node5.getBottomPoint().getY()+0.285*y));
 				if(j >= 21 && y  >=31 && y3 >= 30) iteration++; i = 0; y2 = 0;
 			}
 			if(iteration == 9){
@@ -310,7 +307,7 @@ public class RemoveMin extends JApplet {
 				if(j <= 89) j+=5;
 				if(y <= 69) y+=4;				
 				paintReturnNode(90+j,  (int)( 100 -y), g2, "10");
-				if(y >= 70 && j >= 150){iteration = y = y2 = i = j = 0;}
+				if(y >= 70 && j >= 150){iteration = y = y2 = y3 = K = i = j = 0;}
 			}
 		} 
 
