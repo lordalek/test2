@@ -222,7 +222,6 @@ public class InsertSingleNode extends JApplet {
 		@Override
 		public void run() {
 			while (thread != null) {
-				System.out.println(iteration);
 				try{
 
 					Thread.sleep(50);
