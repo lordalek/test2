@@ -296,7 +296,7 @@ public class RemoveMin extends JApplet {
 				if(i <= 20)i+=1; 
 				g2.fill(new Rectangle2D.Double(9, 230 - y2 , 30, 30));
 				g2.setColor(Color.BLACK);
-				if(i >= 21 && y2  >=31) iteration++; j = 0; y = 0;
+				if(i >= 21 && y2  >=31) {iteration++; j = 0; y = 0;}
 			}
 			
 			if(iteration == 10) {
@@ -308,9 +308,9 @@ public class RemoveMin extends JApplet {
 				paintLine(node15, node10, g2);
 				paintLine(node10, node13, g2);
 				if(j <= 89) j+=5;
-				if(y <= 69) y+=4;
-				if(y >= 70 && j >= 150) iteration++;
+				if(y <= 69) y+=4;				
 				paintReturnNode(90+j,  (int)( 100 -y), g2, "10");
+				if(y >= 70 && j >= 150){iteration = y = y2 = i = j = 0;}
 			}
 		} 
 
