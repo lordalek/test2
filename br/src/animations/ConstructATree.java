@@ -147,7 +147,8 @@ public class ConstructATree extends JApplet {
 				g2.setColor(Color.RED);
 				returnNode1 = new GrahpicalNode("5", 75+(j/2), 170-y);
 				paintNode(returnNode1, g2);		
-				g2.drawLine((int) node15.getBottomPoint().getX(), (int) node15.getBottomPoint().getY(), (int) node15.getBottomPoint().getX()+j, (int) ((int) node15.getBottomPoint().getY()+(0.285*y)));
+				g2.drawLine((int) node15.getBottomPoint().getX(), (int) node15.getBottomPoint().getY(),
+						(int) node15.getBottomPoint().getX()+j, (int) ((int) node15.getBottomPoint().getY()+(0.285*y)));
 				g2.setColor(Color.BLACK);
 				drawInitialThreeNodes(g2);
 				paintLine(node15, node10, g2);
@@ -161,7 +162,8 @@ public class ConstructATree extends JApplet {
 				if(y >= 70 && j >= 150){iteration++; j=0;y=0;}
 				returnNode1 = new GrahpicalNode("10", 150+j, 100-y);
 				g2.setColor(Color.RED);
-				g2.drawLine((int) node10.getBottomPoint().getX(), (int) node10.getBottomPoint().getY(), (int) node10.getBottomPoint().getX()-j/2,(int) (node10.getBottomPoint().getY()+y*0.285));
+				g2.drawLine((int) node10.getBottomPoint().getX(), (int) node10.getBottomPoint().getY(),
+						(int) node10.getBottomPoint().getX()-j/2,(int) (node10.getBottomPoint().getY()+y*0.285));
 				paintNode(returnNode1, g2);	
 				g2.setColor(Color.BLACK);
 
@@ -224,7 +226,8 @@ public class ConstructATree extends JApplet {
 				paintNode(returnNode1, g2);
 				g2.setColor(Color.BLACK);
 
-				g2.drawLine((int) node15.getBottomPoint().getX(), (int) node15.getBottomPoint().getY(), (int)node60.getTopPoint().getX(), (int) ((int) node60.getTopPoint().getY()));				
+				g2.drawLine((int) node15.getBottomPoint().getX(), (int) node15.getBottomPoint().getY(),
+						(int)node60.getTopPoint().getX(), (int) ((int) node60.getTopPoint().getY()));				
 				drawInitialThreeNodes(g2);
 				paintLine(node15, node10, g2);
 				paintLine(node10, node13, g2);
@@ -248,7 +251,8 @@ public class ConstructATree extends JApplet {
 				g2.setColor(Color.RED);
 				paintNode(returnNode1, g2);
 				paintNode(returnNode2, g2);
-				g2.drawLine((int) node60.getBottomPoint().getX(), (int) node60.getBottomPoint().getY(), (int) node60.getBottomPoint().getX()-j,(int) (node60.getBottomPoint().getY()+y*0.285));
+				g2.drawLine((int) node60.getBottomPoint().getX(), (int) node60.getBottomPoint().getY(),
+						(int) node60.getBottomPoint().getX()-j,(int) (node60.getBottomPoint().getY()+y*0.285));
 				g2.setColor(Color.BLACK);
 				
 				drawInitialThreeNodes(g2);
@@ -271,7 +275,8 @@ public class ConstructATree extends JApplet {
 				returnNode1 = new GrahpicalNode("5", 75+j, 170-y);
 				g2.setColor(Color.RED);
 				paintNode(returnNode1, g2);	
-				g2.drawLine((int) node5.getBottomPoint().getX(), (int) node5.getBottomPoint().getY(), (int) node5.getBottomPoint().getX()-j/2,(int) (node5.getBottomPoint().getY()+y*0.285));
+				g2.drawLine((int) node5.getBottomPoint().getX(), (int) node5.getBottomPoint().getY(),
+						(int) node5.getBottomPoint().getX()-j/2,(int) (node5.getBottomPoint().getY()+y*0.285));
 				g2.setColor(Color.BLACK);
 																
 				drawInitialThreeNodes(g2);
@@ -381,7 +386,8 @@ public class ConstructATree extends JApplet {
 				returnNode1 = new GrahpicalNode("5", 75+j, 170-y);
 				g2.setColor(Color.RED);
 				paintNode(returnNode1, g2);
-				g2.drawLine((int) node5.getBottomPoint().getX(), (int) node5.getBottomPoint().getY(), (int) node5.getBottomPoint().getX()+j,(int) (node5.getBottomPoint().getY()+y*0.285));
+				g2.drawLine((int) node5.getBottomPoint().getX(), (int) node5.getBottomPoint().getY(),
+						(int) node5.getBottomPoint().getX()+j,(int) (node5.getBottomPoint().getY()+y*0.285));
 				g2.setColor(Color.BLACK);
 				
 				drawInitialThreeNodes(g2);
