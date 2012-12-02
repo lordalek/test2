@@ -44,8 +44,6 @@ public class InsertSingleNode extends JApplet {
 					if(iteration <maxIteration) iteration++;
 					else if(iteration >= maxIteration) iteration = 0;
 					start(); 
-					System.out.println(iteration);
-					repaint();
 				}
 			});
 
