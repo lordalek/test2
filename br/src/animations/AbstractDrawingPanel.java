@@ -6,7 +6,8 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 
-public class AbstractDrawingPanel extends JPanel implements Runnable{
+public abstract class AbstractDrawingPanel extends JPanel implements Runnable{
+	private Thread thread;
 	public void paintLine(GrahpicalNode topNode, GrahpicalNode bottomNode, Graphics2D g2) {
 		g2.drawLine((int)bottomNode.getTopPoint().getX(), (int)bottomNode.getTopPoint().getY(), (int) topNode.getBottomPoint().getX(), (int) topNode.getBottomPoint().getY());
 	} 
@@ -31,9 +32,28 @@ public class AbstractDrawingPanel extends JPanel implements Runnable{
 		g2.setColor(Color.BLACK);
 	}
 
+	public void start() {
+
+		if (thread == null) {
+			thread = new Thread(this);
+			thread.start();
+		}
+	}
+
+	public void stop() {
+		if(thread != null) thread = null;
+	}
+
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		
+		while (thread != null) {
+			try{
+				Thread.sleep(100);
+			}
+			catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			repaint();
+		}
 	}
 }

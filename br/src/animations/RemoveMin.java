@@ -322,32 +322,6 @@ public class RemoveMin extends JApplet {
 			g2.drawString(value, x+15, y+30);
 			g2.setColor(Color.BLACK);
 		}
-			
-		public void stop() {
-			if(thread != null) thread = null;
-		}
-
-		public void start() {
-
-			if (thread == null) {
-				thread = new Thread(this);
-				thread.start();
-			}
-		}
-
-		@Override
-		public void run() {
-			while (thread != null) {
-				System.out.println(iteration);
-				try{
-					Thread.sleep(100);
-				}
-				catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				repaint();
-			}
-		}
 
 		private class FindMinSymbol {
 			private int x, y;

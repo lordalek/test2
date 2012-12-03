@@ -204,31 +204,5 @@ public class InsertSingleNode extends JApplet {
 				if(i >= 70 && y2 >= 20) iteration = 0;
 			}
 		}
-		
-		public void start() {
-
-			if (thread == null) {
-				thread = new Thread(this);
-				thread.start();
-			}
-		}
-
-		public void stop() {
-			if(thread != null) thread = null;
-		}
-
-		@Override
-		public void run() {
-			while (thread != null) {
-				try{
-					Thread.sleep(50);
-				}
-				catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				repaint();
-			}
-		}
-
 	}
 }

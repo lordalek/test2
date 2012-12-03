@@ -285,31 +285,5 @@ public class SingleRotateLeft extends JApplet {
 				if(j >= 20){iteration = j = y = 0;}
 			}
 		}
-
-		public void stop() {
-			if(thread != null) thread = null;
-		}
-
-		public void start() {
-
-			if (thread == null) {
-				thread = new Thread(this);
-				thread.start();
-			}
-		}
-
-		@Override
-		public void run() {
-			while (thread != null) {
-				System.out.println(iteration);
-				try{
-					Thread.sleep(100);
-				}
-				catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				repaint();
-			}
-		}
 	}
 }

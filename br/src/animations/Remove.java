@@ -128,7 +128,6 @@ public class Remove extends JApplet {
 				paintLine(node16, node17, g2);
 				j+=3;
 				y+=3;
-				System.out.println(j +" y: "+ y);
 				paintRemoveSymbol(150+j, 30+y, g2);
 				if(j >= 75 && y >=70){ iteration++; j = 0; y = 0;}
 			}
@@ -163,15 +162,11 @@ public class Remove extends JApplet {
 				paintLine(node15, node13, g2);
 				paintLine(node15, node20, g2);
 				paintLine(node20, node16, g2);
-				paintLine(node20, node21, g2);
-				
-				
+				paintLine(node20, node21, g2);	
 				g2.setColor(Color.RED);
 				if(j <= 75){j+=3; y+=3;}
-				paintNode(node16, g2);
-				
+				paintNode(node16, g2);			
 				node16 = new GrahpicalNode("16", 175-j, 170+y);
-				System.out.println(j + " y: " + y);
 				g2.drawLine((int)node16.getTopPoint().getX()-30,(int) node16.getTopPoint().getY(),(int) node16.getTopPoint().getX()+30,(int) node16.getTopPoint().getY()+50);
 				g2.drawLine((int)node16.getTopPoint().getX()+30,(int) node16.getTopPoint().getY(),(int) node16.getTopPoint().getX()-30,(int) node16.getTopPoint().getY()+50);
 				paintRemoveSymbol(155-j, 170+y, g2);
@@ -195,7 +190,6 @@ public class Remove extends JApplet {
 				paintLine(node20, node21, g2);
 				if(j <= 124)j+=4; 
 				if(y <= 90)y+=3;
-				System.out.println(j + " y: " + y);
 				if(y >= 91 && j >= 125){ iteration++; j = 0; y = 0;}
 				g2.drawLine((int) node20.getBottomPoint().getX(), (int) node20.getBottomPoint().getY(), (int) node16.getTopPoint().getX()+j, (int) node16.getTopPoint().getY()-y);
 				
@@ -219,7 +213,6 @@ public class Remove extends JApplet {
 				if(j <= 24) j+=1;
 				if(y <= 89) y+=4;
 				if(y >= 90 && j >= 24){ iteration++; j = 0; y = 0;}
-				System.out.println(j + " y: " +y);
 				g2.drawLine((int) node20.getBottomPoint().getX(), (int) node20.getBottomPoint().getY(), (int) node20.getBottomPoint().getX()-j, (int) node20.getBottomPoint().getY()+y);
 			}
 			
@@ -279,32 +272,6 @@ public class Remove extends JApplet {
 			g2.draw(new Ellipse2D.Double(x, y, 50, 50));
 			g2.drawString(value, x+15, y+30);
 			g2.setColor(Color.BLACK);
-		}
-		
-		public void stop() {
-			if(thread != null) thread = null;
-		}
-
-		public void start() {
-
-			if (thread == null) {
-				thread = new Thread(this);
-				thread.start();
-			}
-		}
-
-		@Override
-		public void run() {
-			while (thread != null) {
-				System.out.println(iteration);
-				try{
-					Thread.sleep(100);
-				}
-				catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				repaint();
-			}
 		}
 		
 		private class RemoveSymbol {
