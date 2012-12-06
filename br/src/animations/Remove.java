@@ -40,45 +40,7 @@ public class Remove extends JApplet {
 		private RemoveSymbol rs;
 		private int iteration, maxIteration = 7, y = 0, j = 0;
 		public DrawingPanel(){
-			this.setLayout(new BorderLayout());
-			button = new JButton("Next");
-			button.addActionListener(new ActionListener() {
-
-				@Override
-				public void actionPerformed(ActionEvent arg0) {
-					if(iteration <maxIteration) iteration++;
-					else if(iteration >= maxIteration) iteration = 0;
-					start(); 
-					System.out.println(iteration);
-					repaint();
-				}
-			});
-
-			playButton = new JButton("Play");
-			playButton.addActionListener(new ActionListener() {
-
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					start();
-
-				}
-			});
-
-			stopButton = new JButton("Pause");
-			stopButton.addActionListener(new ActionListener() {
-
-				@Override
-				public void actionPerformed(ActionEvent arg0) {
-					stop();
-
-				}
-			});
-			JPanel southButtonPanel = new JPanel();
-			southButtonPanel.setLayout(new FlowLayout());
-			southButtonPanel.add(stopButton);
-			southButtonPanel.add(playButton);
-			southButtonPanel.add(button);
-			this.add(southButtonPanel, BorderLayout.SOUTH);
+			
 			iteration = 0;
 		}
 
